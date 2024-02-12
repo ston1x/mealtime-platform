@@ -1,0 +1,6 @@
+[submodule "mealtime-rails"]
+	path = mealtime-rails
+	url = https://github.com/ston1x/mealtime-rails.git
+[submodule "mealtime-react"]
+	path = mealtime-react
+	url = https://github.com/ston1x/mealtime-react.git
