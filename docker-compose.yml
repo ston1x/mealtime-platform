@@ -1,8 +1,8 @@
-version: '3.7'
+version: "3.7"
 
 services:
   db:
-    image: 'postgres:16.1'
+    image: "postgres:16.1"
     volumes:
       - postgres:/var/lib/postgresql/data
     environment:
@@ -13,11 +13,15 @@ services:
       context: ./mealtime-react
     ports:
       - 3001:3000
+    # TODO: Make WebSockets work
     expose:
       - 3001
     command: npm run start
     depends_on:
       - backend
+    volumes:
+      - ./mealtime-react:/app
+      - /app/node_modules
     restart: always
   backend:
     container_name: backend
